@@ -1,0 +1,30 @@
+server:
+  error:
+    include-binding-errors: always
+    include-stacktrace: never
+    include-message: always
+
+  port: 8080
+  servlet:
+    context-path: /sms/api
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/smsdb
+    password: root
+    username: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: true
+    show-sql: true
+
+backendapi:
+  app:
+    jwtSecret: smsSecretkey
+    jwtExpirationMs: 7200000
